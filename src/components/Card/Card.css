@@ -1,5 +1,18 @@
-.flex-container {
+.main-container {
+    margin: 0 auto !important;
+
+    /* height: 100%; */
+    padding: 4%;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    transition: 100ms;
+}
+
+.main-container:hover {
+    transform: scale(1.2);
+}
+
+.card {
+    cursor: pointer;
+    /* background-color: var(--secondary) !important; */
 }

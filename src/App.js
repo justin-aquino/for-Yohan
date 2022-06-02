@@ -2,7 +2,8 @@
 import { useRef, useState } from 'react';
 import './App.css';
 import flashCards from './flashcards';
-import Card from './components/Card/Card';
+import ShowCard from './components/Card/ShowCard';
+import { CardGroup } from 'react-bootstrap';
 
 function App() {
   
@@ -15,12 +16,16 @@ function App() {
   }
 
   const mappedCards = flashCards.map((card, idx) => {
-    return <Card chooseImage={chooseImage} card={card} />
+    return <ShowCard chooseImage={chooseImage} card={card} key={idx} />
   })
   return (
-    <div className="App">
+    <div className="container">
       <h1>Hello Yohanie!</h1>
-      {mappedCards}
+      <div className=" subCont ">
+        <CardGroup className="border bg-light subCont">
+          {mappedCards}
+        </CardGroup>
+      </div>
     </div>
   );
 }
