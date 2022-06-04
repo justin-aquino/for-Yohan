@@ -1,15 +1,18 @@
 .main-container {
-    margin: 0 auto !important;
-
-    /* height: 100%; */
+    /* margin: 0 auto !important; */
     padding: 4%;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 2%;
+}
+
+.sub-container {
     transition: 100ms;
 }
 
-.main-container:hover {
-    transform: scale(1.2);
+.sub-container:hover {
+    transform: scale(1.1);
+    border: 10px solid var(--secondary) !important;
 }
 
 .card {

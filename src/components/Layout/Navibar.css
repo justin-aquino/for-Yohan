@@ -1,0 +1,16 @@
+.navi {
+    background-color: var(--accentB) !important;
+    text-align: center;
+    
+  }
+  .navi-links {
+    font-size: 1.5rem;
+    color: var(--text-color) !important;
+  }
+  .navi-links:hover {
+      color: var(--secondary) !important;
+  }
+  .hero {
+      color: rgb(48,48,48) !important;
+  }
+  

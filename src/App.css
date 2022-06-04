@@ -3,6 +3,7 @@
   --secondary: #FFAFF8;
   --accentA: #F5FEA1;
   --accentB: #AAFFA2;
+  --text-color: gray
 }
 
 body {
@@ -18,16 +19,12 @@ body {
   pointer-events: none;
 }
 .container {
-  /* min-height: 100vh; */
-  margin-top: 2%;
-  padding: 2%;
-  width: 80%;
   text-align: center;
 }
-.subCont {
+/* .subCont {
   border-radius: 25px ;
   padding-bottom: 100px !important;
-}
+} */
 h1 {
   background-color: var(--secondary);
   padding: 3%;
@@ -52,11 +49,7 @@ h1 {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.container {
-  margin: 5%;
-  gap: 5%;
-  justify-content: space-between;
-}
+
 .App-link {
   color: #61dafb;
 }
