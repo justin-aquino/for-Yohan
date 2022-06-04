@@ -1,13 +1,17 @@
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import './App.css';
 import flashCards from './flashcards';
-import ShowCard from './components/Card/ShowCard';
-import { CardGroup } from 'react-bootstrap';
+import axios from "axios"
+import { Routes, Route } from 'react-router-dom';
+import Register from './components/Users/Register';
+import CardList from './components/Card/CardList';
+import AddCard from './components/Card/AddCard';
 
 function App() {
   
   const [textToSpeak, setTextToSpeak] = useState("Hello Yohanie!")
+  const [flashCardsToMap, setFlashCardsToMap] = useState([])
   const synthRef = useRef(window.speechSynthesis)
 
   const chooseImage = (text) => {
@@ -15,18 +19,25 @@ function App() {
     synthRef.current.speak(utter)
   }
 
-  const mappedCards = flashCards.map((card, idx) => {
-    return <ShowCard chooseImage={chooseImage} card={card} key={idx} />
-  })
+
+  useEffect(() => {
+    axios.get(`http://localhost:8000/flashcards`)
+      .then(response => {
+        setFlashCardsToMap(response.data.rows)
+      })
+  },[])
+
+  
   return (
     <div className="container">
-      <h1>Hello Yohanie!</h1>
-      <div className=" subCont ">
-        <CardGroup className="border bg-light subCont">
-          {mappedCards}
-        </CardGroup>
+        <h1>Hello Yohanie!</h1>
+        <Routes>
+            <Route path="/register" element={<Register />}/>
+            <Route path="/add-card" element={<AddCard setFlashCardsToMap={setFlashCardsToMap} flashCardsToMap={flashCardsToMap} />}/>
+            <Route path="/flashcards" element={<CardList flashCards={flashCardsToMap} chooseImage={chooseImage} />}/>
+        </Routes>
+       
       </div>
-    </div>
   );
 }
 
