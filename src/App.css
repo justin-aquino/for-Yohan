@@ -7,8 +7,8 @@
 }
 
 body {
-  background-color: var(--primary) !important;
-}
+  background-image: url(/public/blob.svg)!important;
+ }
 
 .App {
   text-align: center;

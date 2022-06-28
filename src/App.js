@@ -33,7 +33,7 @@ function App() {
   return (
     <>
       <Navibar />
-      <div className="container">
+      <div className="container"  >
           <Routes>
               <Route path="/register" element={<Register />}/>
               <Route path="/add-card" element={<AddCard setFlashCardsToMap={setFlashCardsToMap} flashCardsToMap={flashCardsToMap} />}/>
