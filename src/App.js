@@ -12,7 +12,7 @@ import Navibar from './components/Layout/Navibar';
 function App() {
   
   const [textToSpeak, setTextToSpeak] = useState("Hello Yohanie!")
-  const [flashCardsToMap, setFlashCardsToMap] = useState([])
+  const [flashCardsToMap, setFlashCardsToMap] = useState([...flashCards])
   const [refresher, setRefresher] = useState(false)
   const synthRef = useRef(window.speechSynthesis)
 
