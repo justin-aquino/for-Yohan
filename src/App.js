@@ -37,7 +37,7 @@ function App() {
           <Routes>
               <Route path="/register" element={<Register />}/>
               <Route path="/add-card" element={<AddCard setFlashCardsToMap={setFlashCardsToMap} flashCardsToMap={flashCardsToMap} />}/>
-              <Route path="/flashcards" element={<CardList refresher={refresher} setRefresher={setRefresher} flashCards={flashCardsToMap} chooseImage={chooseImage} />}/>
+              <Route path="/" element={<CardList refresher={refresher} setRefresher={setRefresher} flashCards={flashCardsToMap} chooseImage={chooseImage} />}/>
           </Routes>
         
       </div>
